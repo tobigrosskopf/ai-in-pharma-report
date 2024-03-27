@@ -1,0 +1,36 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+      "title": "Get File",
+      "description": "Retrieves file form github repo.",
+      "version": "v1.0.0"
+    },
+    "servers": [
+      {
+        "url": "https://api.github.com/repos/tobigrosskopf/ai-in-pharma-report"
+      }
+    ],
+    "paths": {
+      "/contents/": {
+        "get": {
+          "description": "If no file or directory name is provided, the contents of the directory are returned. If a file name is provided, the content of the file is returned.",
+          "operationId": "GetDirOrFile",
+          "parameters": [
+            {
+              "name": "resource_name",
+              "in": "query",
+              "description": "The file to download or directory to browse",
+              "required": false,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "deprecated": false
+        }
+      }
+    },
+    "components": {
+      "schemas": {}
+    }
+  }
